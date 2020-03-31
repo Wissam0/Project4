@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="h1">
+            News-Article Evaluator
+        </div>
+        <div class="">
+
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <form class="">
+                <input id="name" type="text" name="input" value="" placeholder="Article Url">
+                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)">
+            </form>
+            <section>
+
+                <section>
+                    <strong>Results:</strong>
+                    <div id="results"></div>
+                </section>
+    </main>
+
+    <footer>
+        <p>Udacity-Project 4</p>
+    </footer>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+
+</body>
+
+</html>
