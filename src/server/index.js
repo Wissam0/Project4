@@ -43,7 +43,7 @@ const textApi = new Aylien({
   application_key: process.env.KEY
 });
 
-app.post("/infoURL", function(req, res) {
+app.post("/postURL", function(req, res) {
   console.log(req.body);
   const reqURL = req.body.url;
   console.log(reqURL);
@@ -53,15 +53,21 @@ app.post("/infoURL", function(req, res) {
         url: reqURL
       },
       (error, response) => {
-        if (error === null) {
-          console.log(response);
+        if (error) {
           res.json({
-            pol: response.polarity,
-            con: response.polarity_confidence
+            msg: "Fail " + error,
+            pol: "",
+            con: "",
+            txt: ""
           });
         } else {
+          console.log(response);
           res.json({
-            message: error
+            msg: "Success",
+            pol: response.polarity,
+            con: response.polarity_confidence,
+            txt: response.text
+
           });
         }
       }
