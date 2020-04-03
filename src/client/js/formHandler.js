@@ -5,10 +5,10 @@ import {
 async function handleSubmit(event) {
   event.preventDefault();
   const inputUrl = document.getElementById("name").value;
-  const result1UI = document.getElementById("results1");
-  const result2UI = document.getElementById("results2");
-  const result3UI = document.getElementById("results3");
-  const result4UI = document.getElementById("results4");
+  const result1UI = document.getElementById("result1");
+  const result2UI = document.getElementById("result2");
+  const result3UI = document.getElementById("result3");
+  const result4UI = document.getElementById("result4");
 
   if (!checkForUrl(inputUrl)) {
     resultUI.textContent = "Not a valid url.";
